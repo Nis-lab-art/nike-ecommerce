@@ -1,5 +1,4 @@
 import React from "react";
-// import { Card } from "@/components";
 import { getCurrentUser } from "@/lib/auth/actions";
 import Card from "@/components/Card";
 
