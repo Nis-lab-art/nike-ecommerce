@@ -8,7 +8,7 @@ const jost = Jost({
 });
 
 export const metadata: Metadata = {
-  title: "Nike",
+  title: "Nike. Just Do It",
   description: "A Nike ecommerce app built with Next.js and Tailwind CSS",
 };
 
