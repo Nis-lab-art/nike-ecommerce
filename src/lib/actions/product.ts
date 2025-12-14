@@ -36,6 +36,7 @@ import {
 } from "@/lib/db/schema";
 
 import { NormalizedProductFilters } from "@/lib/utils/query";
+import { hasItems } from "../utils/guard";
 
 type ProductListItem = {
   id: string;
@@ -76,8 +77,6 @@ export async function getAllProducts(
     conds.push(inArray(categories.slug, filters.categorySlugs));
   }
 
-  const hasSize = filters?.sizeSlugs?.length || 0 > 0;
-  const hasColor = filters?.colorSlugs?.length || 0 > 0;
   const hasPrice = !!(
     filters.priceMin !== undefined ||
     filters.priceMax !== undefined ||
@@ -85,7 +84,7 @@ export async function getAllProducts(
   );
 
   const variantConds: SQL[] = [];
-  if (hasSize) {
+  if (hasItems(filters.sizeSlugs)) {
     variantConds.push(
       inArray(
         productVariants.sizeId,
@@ -96,7 +95,8 @@ export async function getAllProducts(
       )
     );
   }
-  if (hasColor) {
+
+  if (hasItems(filters.colorSlugs)) {
     variantConds.push(
       inArray(
         productVariants.colorId,
@@ -149,7 +149,8 @@ export async function getAllProducts(
     .from(productVariants)
     .where(variantConds.length ? and(...variantConds) : undefined)
     .as("v");
-  const imagesJoin = hasColor
+
+  const imagesJoin = hasItems(filters.colorSlugs)
     ? db
         .select({
           productId: productImages.productId,
