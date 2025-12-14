@@ -203,8 +203,8 @@ export async function getAllProducts(
       ? desc(sql`max(${variantJoin.price})`)
       : desc(products.createdAt);
 
-  const page = Math.max(1, filters?.page);
-  const limit = Math.max(1, Math.min(filters?.limit, 60));
+  const page = Math.max(1, filters.page || 0);
+  const limit = Math.max(1, Math.min(filters.limit || 0, 60));
   const offset = (page - 1) * limit;
 
   const rows = await db
