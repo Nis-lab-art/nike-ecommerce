@@ -8,6 +8,13 @@
       "when": 1765700984322,
       "tag": "0000_chunky_justice",
       "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1765702683064,
+      "tag": "0001_classy_power_pack",
+      "breakpoints": true
     }
   ]
 }
