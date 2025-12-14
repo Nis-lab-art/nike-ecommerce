@@ -193,7 +193,7 @@ export default async function ProductDetailPage({
     : undefined;
 
   return (
-    <main className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <main className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pb-8">
       <nav className="py-4 text-caption text-dark-700">
         <Link href="/" className="hover:underline">
           Home

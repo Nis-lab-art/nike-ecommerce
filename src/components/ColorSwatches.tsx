@@ -41,7 +41,7 @@ export default function ColorSwatches({
             aria-label={`Color ${v.color}`}
             aria-selected={isActive}
             role="option"
-            className={`relative h-[72px] w-[120px] overflow-hidden rounded-lg ring-1 ring-light-300 transition focus:outline-none focus-visible:ring-2 focus-visible:ring-[--color-dark-500] ${
+            className={`relative h-18 w-30 overflow-hidden rounded-lg ring-1 ring-light-300 transition focus:outline-none focus-visible:ring-2 focus-visible:ring-[--color-dark-500] ${
               isActive ? "ring-[--color-dark-500]" : "hover:ring-dark-500"
             }`}
           >

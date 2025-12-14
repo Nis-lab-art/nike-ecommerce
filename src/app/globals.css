@@ -17,7 +17,7 @@
   --color-red: #d33918;
   --color-orange: #d37918;
 
-  /* Font family */
+  /* Font family (applied globally in layout) */
   --font-jost: "Jost", sans-serif;
 
   /* Heading sizes */
@@ -56,4 +56,37 @@
   --text-footnote: 12px;
   --text-footnote--line-height: 18px;
   --text-footnote--font-weight: 400;
+}
+
+/* ✅ Typography utilities (no font-family here) */
+@layer utilities {
+  .heading-3 {
+    font-size: var(--text-heading-3);
+    line-height: var(--text-heading-3--line-height);
+    font-weight: var(--text-heading-3--font-weight);
+  }
+
+  .body {
+    font-size: var(--text-body);
+    line-height: var(--text-body--line-height);
+    font-weight: var(--text-body--font-weight);
+  }
+
+  .body-medium {
+    font-size: var(--text-body-medium);
+    line-height: var(--text-body-medium--line-height);
+    font-weight: var(--text-body-medium--font-weight);
+  }
+
+  .caption {
+    font-size: var(--text-caption);
+    line-height: var(--text-caption--line-height);
+    font-weight: var(--text-caption--font-weight);
+  }
+
+  .footnote {
+    font-size: var(--text-footnote);
+    line-height: var(--text-footnote--line-height);
+    font-weight: var(--text-footnote--font-weight);
+  }
 }

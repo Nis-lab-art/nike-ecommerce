@@ -65,7 +65,10 @@ export default async function ProductsPage({
       )}
 
       <section className="grid grid-cols-1 gap-6 md:grid-cols-[240px_1fr]">
-        <Filters />
+        <div className="pb-6">
+          <Filters />
+        </div>
+
         <div>
           {products.length === 0 ? (
             <div className="rounded-lg border border-light-300 p-8 text-center">
